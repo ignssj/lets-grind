@@ -40,7 +40,7 @@ public class UserService {
         var userEntity = this.userRepository.findById(UUID.fromString(id));
 
         if (userEntity.isEmpty()){
-            return userEntity;
+            return null;
         }
 
         var user = userEntity.get();

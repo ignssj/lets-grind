@@ -47,7 +47,7 @@ public class UserController {
     public ResponseEntity<Optional<User>> updateById(@PathVariable("id") String id,
                                                      @RequestBody UpdateUserDTO body){
         var user = this.userService.updateUserById(id, body);
-        if (user.isEmpty()){
+        if (user == null){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(user);
